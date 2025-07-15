@@ -1,0 +1,268 @@
+/* Balanced Layout Fix - Replacing visibility-fix.css */
+
+/* Base reset for consistent layout */
+* {
+  box-sizing: border-box;
+}
+
+/* Body and typography */
+body {
+  color: #1f2937;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+/* Header improvements */
+header {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+header h1, header p, header a {
+  color: #ffffff;
+}
+
+/* Hero section adjustments */
+.relative.min-h-screen {
+  background: linear-gradient(135deg, #1f2937 0%, #1e3a8a 100%);
+  min-height: 80vh; /* Reduce height for better balance */
+}
+
+/* Gradient text - better visibility */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  display: inline-block;
+  filter: brightness(1.2); /* Increase brightness for better visibility */
+}
+
+/* Section spacing consistency */
+section {
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+}
+
+/* Remove duplicate 3-step section styling */
+#workflow .hidden + .max-w-5xl,
+#flow {
+  display: none !important; /* Hide the duplicate section */
+}
+
+
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+  flex-grow: 1;
+}
+
+/* Footer improvements */
+footer {
+  background: #111827;
+  color: #9ca3af;
+  padding: 3rem 0 2rem;
+}
+
+footer .grid {
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* CTA section centering */
+#contact .md\\:flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  #contact .md\\:flex {
+    flex-direction: row;
+  }
+}
+
+/* Button improvements */
+.btn {
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove animation conflicts */
+.fade-in {
+  opacity: 1;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+
+/* Remove excessive shadows and effects */
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Simplify background patterns */
+.absolute.inset-0 > div {
+  opacity: 0.1;
+}
+
+/* Trust banner adjustments */
+section.relative.bg-white.py-12 {
+  padding: 3rem 0;
+  background: #f3f4f6;
+}
+
+/* Remove z-index conflicts */
+header {
+  z-index: 50;
+}
+
+.relative {
+  z-index: auto;
+}
+
+
+
+/* Footer balance improvements */
+footer .container {
+  max-width: 1200px;
+}
+
+/* CTA section improvements */
+#contact .max-w-4xl {
+  margin-top: 0;
+}
+
+/* Remove extra spacing from sections */
+.aidma-attention,
+.aidma-interest {
+  padding: 5rem 0;
+}
+
+/* Hero section balance */
+.relative.min-h-screen .container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Trust banner spacing */
+section.relative.bg-white.py-12,
+.py-12.border-y {
+  padding: 2rem 0;
+}
+
+#service {
+  padding: 4rem 0;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states */
+:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Form improvements */
+input, select, textarea {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.15s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Remove redundant styles */
+.glass-dark {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Improve readability */
+p {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section dividers */
+.section-divider {
+  width: 4rem;
+  height: 0.25rem;
+  margin: 1.5rem auto;
+}
+
+/* Timeline improvements */
+.timeline-step {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* High contrast improvements */
+@media (prefers-contrast: high) {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .gradient-text {
+    background: #000000;
+    -webkit-text-fill-color: #000000;
+  }
+  

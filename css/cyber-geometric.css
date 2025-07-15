@@ -1,0 +1,182 @@
+/* Cyber Geometric Pattern and Enhanced Contact Section */
+
+/* Contact section - disable all background patterns */
+#contact {
+  position: relative;
+  background: #f9fafb !important; /* Light gray background */
+  overflow: hidden;
+}
+
+/* Disable all geometric patterns */
+#contact::before {
+  display: none !important;
+}
+
+#contact::after {
+  display: none !important;
+}
+
+/* Disable hexagon pattern */
+#contact .cyber-hexagon {
+  display: none !important;
+}
+
+/* Ensure content stays above the pattern */
+#contact > .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Enhanced download button with better styling */
+button[type="submit"],
+.btn-download {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  padding: 0.875rem 2rem !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 
+    0 8px 25px rgba(245, 158, 11, 0.4),
+    0 3px 10px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  z-index: 15 !important;
+}
+
+/* Animated gradient overlay on button */
+button[type="submit"]::before,
+.btn-download::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: button-shine 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Button hover state with enhanced styling */
+button[type="submit"]:hover,
+.btn-download:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 
+    0 12px 35px rgba(245, 158, 11, 0.6),
+    0 5px 15px rgba(0, 0, 0, 0.2) !important;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b) !important;
+}
+
+/* Ensure button text stays above overlay */
+button[type="submit"] span,
+button[type="submit"]:not(:empty),
+.btn-download span,
+.btn-download:not(:empty) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced contact card styling */
+#contact .bg-primary-800 {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle pattern overlay to contact card */
+#contact .bg-primary-800::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure all text stays above pattern with highest z-index */
+#contact .bg-primary-800 > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Force white text color for all contact card text elements */
+#contact .bg-primary-800 h2,
+#contact .bg-primary-800 p,
+#contact .bg-primary-800 span,
+#contact .bg-primary-800 li {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure checkmark icons remain visible */
+#contact .bg-primary-800 svg {
+  position: relative;
+  z-index: 10;
+  color: #60a5fa !important; /* Light blue for checkmarks */
+}
+
+/* Add accent border to contact card */
+#contact .bg-white {
+  border-top: 4px solid #3b82f6 !important;
+}
+
+/* Animations */
+@keyframes cyber-shift {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(50px) translateY(50px); }
+}
+
+@keyframes cyber-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes cyber-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Remove neon-pulse animation as it's no longer needed */
+
+@keyframes button-shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50%, 100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Disable circuit board pattern */
+#contact .circuit-pattern {
+  display: none !important;
+}
+
+/* Disable glowing dots animation */
+#contact .glow-dots {
+  display: none !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #contact::before,
+  #contact::after {
+    background-size: 30px 30px, 50px 50px, 70px 70px;
+  }
+  
+  button[type="submit"] {
+    animation-duration: 3s;
+  }
+}

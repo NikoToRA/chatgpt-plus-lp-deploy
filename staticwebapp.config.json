@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "route": "/privacy.html",
+      "serve": "/privacy.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/medical-terms.html",
+      "serve": "/medical-terms.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/disclaimer.html",
+      "serve": "/disclaimer.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/data-consent.html",
+      "serve": "/data-consent.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/privacy.html",
+      "/data-consent.html",
+      "/medical-terms.html",
+      "/disclaimer.html",
+      "/images/*.{png,jpg,gif,svg}", 
+      "/css/*", 
+      "/js/*", 
+      "/*.ico", 
+      "/*.txt",
+      "/*.json"
+    ]
+  },
+  "trailingSlash": "auto",
+  "globalHeaders": {
+    "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".css": "text/css",
+    ".js": "application/javascript",
+    ".html": "text/html",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".gif": "image/gif",
+    ".ico": "image/x-icon"
+  }
+}
