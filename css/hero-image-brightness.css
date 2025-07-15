@@ -14,9 +14,10 @@
   image-rendering: crisp-edges;
 }
 
-/* 画像の暗いオーバーレイを軽減 */
+/* 画像の暗いオーバーレイを完全に透過 */
 .hero-section .absolute.inset-0.bg-black.bg-opacity-50 {
-  background-color: rgba(0, 0, 0, 0.35) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  opacity: 0 !important;
 }
 
 /* より明るい背景グラデーション */
@@ -44,7 +45,8 @@
   }
   
   .hero-section .absolute.inset-0.bg-black.bg-opacity-50 {
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    opacity: 0 !important;
   }
 }
 
@@ -55,9 +57,48 @@
   }
 }
 
-/* テキストの可読性向上 */
+/* テキストの可読性向上 - 強化されたテキストシャドウ */
 .hero-section .relative.z-10 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 白文字のテキストに特別な処理 */
+.hero-section .text-white {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.7),
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+/* グラデーションテキスト用の背景 */
+.hero-section .gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ef4444 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+/* ボタンの視認性向上 */
+.hero-section .btn-primary-medical,
+.hero-section .btn-secondary-medical {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* 透過背景のボックス */
+.hero-section .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* アニメーション効果 */
