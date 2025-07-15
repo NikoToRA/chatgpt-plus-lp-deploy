@@ -14,28 +14,24 @@
   image-rendering: crisp-edges;
 }
 
-/* 画像の暗いオーバーレイを完全に透過 */
-.hero-section .absolute.inset-0.bg-black.bg-opacity-50 {
-  background-color: rgba(0, 0, 0, 0) !important;
+/* 画像の暗いオーバーレイを完全に透過 - 強力なセレクタで上書き */
+.hero-section .absolute.inset-0.bg-black.bg-opacity-50,
+.hero-section .bg-black.bg-opacity-50,
+.hero-section div[class*="bg-black"],
+.hero-section div[class*="bg-opacity"] {
+  background: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
   opacity: 0 !important;
+  display: none !important;
 }
 
-/* より明るい背景グラデーション */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.1) 0%,
-    rgba(147, 51, 234, 0.1) 50%,
-    rgba(239, 68, 68, 0.1) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
+/* オーバーレイを完全に無効化 */
+.hero-section::before,
+.hero-section::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
 }
 
 /* レスポンシブ対応 */
@@ -44,9 +40,15 @@
     filter: brightness(1.25) contrast(1.12) saturate(1.05);
   }
   
-  .hero-section .absolute.inset-0.bg-black.bg-opacity-50 {
-    background-color: rgba(0, 0, 0, 0) !important;
+  .hero-section .absolute.inset-0.bg-black.bg-opacity-50,
+  .hero-section .bg-black.bg-opacity-50,
+  .hero-section div[class*="bg-black"],
+  .hero-section div[class*="bg-opacity"] {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
     opacity: 0 !important;
+    display: none !important;
   }
 }
 
